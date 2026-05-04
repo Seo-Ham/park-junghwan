@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="朴廷桓 Park Junghwan — 韩国围棋九段·六冠棋仙。首冠到六冠横跨5312天，围棋史上最长跨度。">
+<title>朴廷桓 PARK JUNGHWAN — 六冠棋仙 Fanpage</title>
+<style>
+/* ===== Design System ===== */
+:root {
+  --blue-900: #0c1929;
+  --blue-800: #132c4b;
+  --blue-700: #1a3f6e;
+  --blue-600: #1e5ab4;
+  --blue-500: #2979d4;
+  --blue-400: #4a90e2;
+  --blue-300: #7ab4f0;
+  --blue-200: #b0d4f7;
+  --blue-100: #dceaf9;
+  --blue-50: #eef4fb;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  --space-xs: 0.4rem; --space-sm: 0.8rem; --space-md: 1.2rem;
+  --space-lg: 2rem; --space-xl: 3rem; --space-2xl: 5rem;
+  --max-width: 920px;
+  --toc-width: 180px;
+  --radius: 8px; --radius-lg: 14px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",-apple-system,sans-serif;
+  line-height:1.7;font-size:15px;color:var(--gray-800);
+  background:var(--blue-900);
+  overflow-x:hidden;
+}
+
+/* ===== FIXED BACKGROUND (persists across entire page) ===== */
+.bg-layer{
+  position:fixed;inset:-5%;
+  z-index:0;
+  background:url('park-xian.jpg') center/cover no-repeat;
+  filter:brightness(0.4) saturate(1.1);
+  transform:perspective(1200px) rotateY(-3deg) scale(1.12);
+  transition:transform .08s linear;
+  will-change:transform;
+  pointer-events:none;
+}
+.bg-gradient{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(165deg,rgba(12,25,41,0.65) 0%,rgba(12,25,41,0.45) 30%,rgba(19,44,75,0.55) 60%,rgba(12,25,41,0.7) 100%);
+}
+
+/* ===== MAIN SCROLL LAYER ===== */
+.page-wrap{
+  position:relative;z-index:2;
+  display:flex;justify-content:center;
+  padding:0 var(--space-md);
+}
+.page-main{
+  width:100%;max-width:var(--max-width);
+  padding-top:var(--space-2xl);
+}
+
+/* ===== RIGHT TOC ===== */
+.toc{
+  display:none;
+  position:fixed;right:max(calc((100vw - var(--max-width))/2 - var(--toc-width) - var(--space-xl)),var(--space-sm));
+  top:50%;transform:translateY(-50%);z-index:10;
+  width:var(--toc-width);
+  font-size:.74rem;line-height:2.2;
+}
+.toc-title{font-size:.64rem;font-weight:700;letter-spacing:.12em;color:var(--blue-300);margin-bottom:var(--space-xs);text-transform:uppercase}
+.toc a{display:block;color:rgba(255,255,255,.45);transition:color .2s,padding-left .2s;border-left:2px solid transparent;padding-left:var(--space-sm)}
+.toc a:hover{color:rgba(255,255,255,.8);border-left-color:rgba(255,255,255,.2)}
+.toc a.active{color:var(--blue-300);border-left-color:var(--blue-400);font-weight:600}
+
+@media(min-width:1280px){.toc{display:block}}
+
+/* ===== Nav ===== */
+.navbar{
+  position:fixed;top:0;z-index:100;width:100%;
+  background:rgba(12,25,41,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-container{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:var(--max-width);margin:0 auto;padding:0 var(--space-md);height:52px;
+}
+.nav-logo{font-size:.9rem;font-weight:700;color:var(--blue-300);letter-spacing:.05em}
+.nav-links{display:flex;gap:var(--space-lg);list-style:none}
+.nav-links a{color:rgba(255,255,255,.55);font-size:.78rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--blue-300)}
+
+/* ===== Hero ===== */
+.hero{padding:8vh 0 var(--space-xl)}
+.hero-kr{font-size:.8rem;letter-spacing:.12em;color:rgba(255,255,255,.4);margin-bottom:var(--space-xs)}
+.hero h1{
+  font-size:clamp(2.8rem,8vw,5.5rem);
+  font-weight:900;line-height:.95;letter-spacing:-.01em;
+  color:var(--white);margin-bottom:var(--space-sm);
+}
+.hero h1 .accent{color:var(--blue-300)}
+.hero .subtitle{
+  font-size:clamp(.95rem,1.8vw,1.15rem);
+  color:rgba(255,255,255,.6);
+  max-width:600px;line-height:1.8;margin-bottom:var(--space-md);
+}
+.hero .color-tag{
+  display:inline-block;font-size:.68rem;padding:.2rem .7rem;
+  background:rgba(74,144,226,.2);color:var(--blue-300);
+  border-radius:999px;margin-bottom:var(--space-md);
+  border:1px solid rgba(74,144,226,.25);
+}
+.hero-stats{display:flex;gap:var(--space-xl);flex-wrap:wrap;margin-top:var(--space-md)}
+.hero-stat .num{font-size:2rem;font-weight:900;color:var(--blue-300);line-height:1}
+.hero-stat .label{font-size:.68rem;color:rgba(255,255,255,.4);letter-spacing:.06em;margin-top:var(--space-xs)}
+
+/* ===== Section Cards ===== */
+.section-wrap{
+  margin-bottom:var(--space-lg);
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-radius:var(--radius-lg);
+  padding:var(--space-xl) var(--space-lg);
+  box-shadow:0 4px 32px rgba(0,0,0,.15);
+}
+.section-label{
+  font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;
+  color:var(--blue-500);margin-bottom:var(--space-xs);
+}
+.section-title{
+  font-size:clamp(1.6rem,3.5vw,2.2rem);
+  font-weight:900;margin-bottom:var(--space-xs);letter-spacing:-.01em;
+  color:var(--gray-900);
+}
+.section-sub{color:var(--gray-500);font-size:.88rem;margin-bottom:var(--space-lg)}
+
+/* ===== Info Grid ===== */
+.info-grid{
+  display:grid;grid-template-columns:1fr;gap:1px;
+  background:var(--gray-200);border-radius:var(--radius);overflow:hidden;
+}
+.info-grid dt{
+  padding:var(--space-sm) var(--space-md);background:var(--blue-50);
+  font-size:.72rem;font-weight:700;color:var(--blue-600);letter-spacing:.06em;
+  display:flex;align-items:center;
+}
+.info-grid dd{
+  padding:var(--space-sm) var(--space-md);background:var(--white);
+  font-size:.85rem;color:var(--gray-600);
+}
+@media(min-width:600px){.info-grid{grid-template-columns:110px 1fr}}
+
+/* ===== Timeline ===== */
+.timeline{position:relative;padding-left:var(--space-xl)}
+.timeline::before{
+  content:'';position:absolute;left:6px;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,var(--blue-300),var(--blue-500),var(--blue-300));
+}
+.timeline-item{position:relative;margin-bottom:var(--space-lg)}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-marker{
+  position:absolute;left:calc(-1*var(--space-xl) + 2px);top:4px;
+  width:10px;height:10px;border-radius:50%;background:var(--blue-500);
+  box-shadow:0 0 0 3px var(--white),0 0 0 5px var(--blue-200);
+}
+.timeline-year{font-size:.75rem;font-weight:800;color:var(--blue-500);letter-spacing:.06em;margin-bottom:2px}
+.timeline-body h4{font-size:.95rem;color:var(--gray-900);margin-bottom:2px}
+.timeline-body p{font-size:.82rem;color:var(--gray-600);line-height:1.65}
+
+/* ===== Champ Grid ===== */
+.champ-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-sm)}
+.champ-card{
+  display:block;color:inherit;text-decoration:none;
+  background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);
+  padding:var(--space-md);text-align:center;transition:transform .2s,box-shadow .2s;
+}
+.champ-card:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.champ-card.featured{border-color:var(--blue-400);background:var(--blue-50)}
+.champ-num{font-size:1.6rem;font-weight:900;color:var(--blue-500);line-height:1}
+.champ-card.featured .champ-num{color:var(--blue-600)}
+.champ-name{font-size:.85rem;font-weight:700;margin:var(--space-xs) 0}
+.champ-detail{font-size:.73rem;color:var(--gray-500)}
+.champ-result{display:inline-block;margin-top:var(--space-xs);padding:.1rem .5rem;background:var(--blue-100);color:var(--blue-700);border-radius:999px;font-size:.7rem;font-weight:700}
+.stat-row{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-sm);margin-top:var(--space-lg)}
+.stat-mini{text-align:center;padding:var(--space-sm)}
+.stat-mini .n{font-size:1.3rem;font-weight:900;color:var(--blue-600)}
+.stat-mini .l{font-size:.7rem;color:var(--gray-500);margin-top:2px}
+
+@media(min-width:700px){.champ-grid{grid-template-columns:repeat(3,1fr)}.champ-card.featured{grid-column:span 2}.stat-row{grid-template-columns:repeat(4,1fr)}}
+
+/* ===== Fun Facts ===== */
+.fact-list{}
+.fact-item{
+  display:flex;gap:var(--space-sm);padding:var(--space-xs) 0;
+  border-bottom:1px solid var(--gray-100);font-size:.84rem;color:var(--gray-700);line-height:1.6;align-items:baseline;
+}
+.fact-item:last-child{border:none}
+.fact-num{
+  flex-shrink:0;width:20px;height:20px;border-radius:50%;
+  background:var(--blue-100);color:var(--blue-600);font-size:.65rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.fact-source{font-size:.7rem;color:var(--gray-400);white-space:nowrap;margin-left:auto;flex-shrink:0}
+
+/* ===== Media ===== */
+.media-tabs{display:flex;gap:var(--space-xs);margin-bottom:var(--space-lg);flex-wrap:wrap;justify-content:center}
+.media-tab{
+  padding:.4rem 1rem;border-radius:999px;font-size:.78rem;font-weight:600;
+  border:1.5px solid var(--gray-200);background:var(--white);color:var(--gray-600);
+  cursor:pointer;transition:all .2s;
+}
+.media-tab:hover{border-color:var(--blue-300);color:var(--blue-600)}
+.media-tab.active{background:var(--blue-600);color:#fff;border-color:var(--blue-600)}
+.media-panel{display:none}
+.media-panel.active{display:block}
+.media-grid{display:grid;grid-template-columns:1fr;gap:var(--space-sm)}
+.media-card{
+  background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);
+  overflow:hidden;transition:transform .2s,box-shadow .2s;
+}
+.media-card:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.media-embed{aspect-ratio:16/9;background:var(--gray-100)}
+.media-embed iframe{width:100%;height:100%;border:none}
+.media-info{padding:var(--space-sm) var(--space-md)}
+.media-info h4{font-size:.9rem;margin-bottom:2px}
+.media-info .meta{font-size:.74rem;color:var(--gray-500)}
+.media-badge{display:inline-block;font-size:.64rem;padding:.07rem .4rem;border-radius:999px;font-weight:700;letter-spacing:.05em;margin-bottom:var(--space-xs)}
+.badge-game{background:#fef3c7;color:#92400e}
+.badge-interview{background:var(--blue-100);color:var(--blue-700)}
+.badge-fan{background:#fce7f3;color:#9d174d}
+.badge-doc{background:#d1fae5;color:#065f46}
+.badge-article{background:#e0e7ff;color:#3730a3}
+.badge-youtube{background:#fee2e2;color:#991b1b}
+.ext-link-card{
+  display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-md);
+  background:var(--gray-50);border-radius:var(--radius);border:1px dashed var(--gray-300);
+  transition:border-color .2s;height:100%;
+}
+.ext-link-card:hover{border-color:var(--blue-400)}
+.ext-link-card .icon{font-size:1.5rem;flex-shrink:0}
+
+@media(min-width:600px){.media-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.media-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* ===== Footer ===== */
+.footer-wrap{
+  background:rgba(12,25,41,.95);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+  padding:var(--space-xl);text-align:center;color:var(--gray-400);font-size:.78rem;
+}
+.footer-wrap a{color:var(--blue-300)}
+.back-top{display:inline-block;margin-top:var(--space-sm);font-size:.78rem;font-weight:600;cursor:pointer;color:var(--blue-300)}
+
+/* ===== Reveal ===== */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
+.reveal.revealed{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- Fixed Background -->
+<div class="bg-layer" id="bgLayer"></div>
+<div class="bg-gradient"></div>
+
+<!-- Right TOC -->
+<nav class="toc" id="toc">
+  <div class="toc-title">目录</div>
+  <a href="#hero">首页</a>
+  <a href="#profile">选手档案</a>
+  <a href="#career">职业征程</a>
+  <a href="#honors">六冠纪录</a>
+  <a href="#facts">趣事</a>
+  <a href="#media">物料合集</a>
+</nav>
+
+<!-- Nav -->
+<div class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">PARK JUNGHWAN</a>
+    <ul class="nav-links">
+      <li><a href="#profile">档案</a></li>
+      <li><a href="#career">征程</a></li>
+      <li><a href="#honors">荣誉</a></li>
+      <li><a href="#facts">趣事</a></li>
+      <li><a href="#media">物料</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="page-wrap">
+<main class="page-main">
+
+<!-- Hero -->
+<div id="hero">
+  <div class="hero reveal">
+    <p class="hero-kr">박정환 · 韩国围棋九段</p>
+    <span class="color-tag">朴廷桓最喜欢的颜色是蓝色</span>
+    <h1><span class="accent">朴廷桓</span></h1>
+    <p class="subtitle">
+      13岁入段 · 18岁首冠 · 33岁第六冠
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">6</div><div class="label">世界冠军</div></div>
+      <div class="hero-stat"><div class="num">~48</div><div class="label">冠军头衔</div></div>
+      <div class="hero-stat"><div class="num">5312d</div><div class="label">首冠→六冠</div></div>
+      <div class="hero-stat"><div class="num">19yr</div><div class="label">职业生涯</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Profile -->
+<div class="section-wrap reveal" id="profile">
+  <p class="section-label">Player Profile</p>
+  <h2 class="section-title">选手档案</h2>
+  <dl class="info-grid">
+    <dt>姓名</dt><dd>朴廷桓 / 박정환 / Park Junghwan</dd>
+    <dt>出生</dt><dd>1993年1月11日 · 韩国首尔</dd>
+    <dt>入段</dt><dd>2006年5月（13岁）</dd>
+    <dt>九段</dt><dd>2010年（17岁11个月）</dd>
+    <dt>师从</dt><dd>权甲龙围棋道场</dd>
+    <dt>所属</dt><dd>韩国棋院 · 围甲深圳龙华队</dd>
+    <dt>身高</dt><dd>183cm</dd>
+    <dt>弈城ID</dt><dd>attractive（挨踢）、idontcal（我不卡）……十几个马甲轮着换</dd>
+    <dt>绰号</dt><dd>"大头"（小时候头大）、"老朴"</dd>
+  </dl>
+</div>
+
+<!-- Career -->
+<div class="section-wrap reveal" id="career">
+  <p class="section-label">The Journey</p>
+  <h2 class="section-title">职业征程</h2>
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-marker"></div><div class="timeline-body"><p class="timeline-year">2006</p><h4>13岁入段</h4><p>6岁学棋，大伯喜欢下彩棋，赢了就给零花钱。进入权甲龙道场，5月通过入段考试。</p></div></div>
+    <div class="timeline-item"><div class="timeline-marker"></div><div class="timeline-body"><p class="timeline-year">2010</p><h4>韩国最年轻九段 + 亚运双金</h4><p>广州亚运会男团+混双双料金牌，凭功勋特别升九段。17岁11个月至今保持最年轻九段纪录。顺便免了兵役。</p></div></div>
+    <div class="timeline-item"><div class="timeline-marker"></div><div class="timeline-body"><p class="timeline-year">2011</p><h4>18岁·第一座世界冠军 — 富士通杯</h4><p>击败邱峻夺冠，入段到世界冠军仅5年。"李世石二世"之说由此而来。</p></div></div>
+    <div class="timeline-item"><div class="timeline-marker"></div><div class="timeline-body"><p class="timeline-year">2015—2019</p><h4>黄金时期：四座世界冠军</h4><p>2015 LG杯(2-1金志锡) · 2018梦百合杯(3-0朴永训) · 2019春兰杯(2-0朴永训)。最强棋士战三连冠(2017-19)，2018年奖金破12亿韩元。</p></div></div>
+    <div class="timeline-item"><div class="timeline-marker"></div><div class="timeline-body"><p class="timeline-year">2020</p><h4>南海七番棋 0-7</h4><p>被申真谞0-7横扫。后来说："这次失败是我成长的契机。"</p></div></div>
+    <div class="timeline-item"><div class="timeline-marker"></div><div class="timeline-body"><p class="timeline-year">2021</p><h4>三星杯 2-1 逆转申真谞 · 第五冠</h4><p>时隔不到一年再遇申真谞，2-1逆转夺冠。从0-7到世界冠军。"十个世界冠军是我毕生的梦想。"</p></div></div>
+    <div class="timeline-item"><div class="timeline-marker"></div><div class="timeline-body"><p class="timeline-year">2026</p><h4>棋仙战 2-1 王星昊 · 第六冠</h4><p>第一届新韩银行世界棋仙战，2-1胜中国新锐王星昊。33岁再夺世界冠军，终结五年冠军荒。首冠到六冠5312天，史上最长跨度，追平刘昌赫六冠纪录。</p></div></div>
+  </div>
+</div>
+
+<!-- Honors -->
+<div class="section-wrap reveal" id="honors">
+  <p class="section-label">The Six Crowns</p>
+  <h2 class="section-title">六冠全纪录</h2>
+  <p class="section-sub">六次世界冠军 · 追平刘昌赫 · 韩国并列第四</p>
+  <div class="champ-grid">
+    <a href="https://www.bilibili.com/video/BV1iy4y177va/" target="_blank" rel="noopener" class="champ-card"><div class="champ-num">①</div><div class="champ-name">富士通杯</div><div class="champ-detail">vs 邱峻 🇨🇳 · 1-0</div><div class="champ-result">2011</div></a>
+    <a href="https://www.bilibili.com/video/BV1Ns411z7tZ/" target="_blank" rel="noopener" class="champ-card"><div class="champ-num">②</div><div class="champ-name">LG杯</div><div class="champ-detail">vs 金志锡 🇰🇷 · 2-1</div><div class="champ-result">2015</div></a>
+    <a href="https://www.bilibili.com/video/BV1kA411e7jm/" target="_blank" rel="noopener" class="champ-card"><div class="champ-num">③</div><div class="champ-name">梦百合杯</div><div class="champ-detail">vs 朴永训 🇰🇷 · 3-0</div><div class="champ-result">2018</div></a>
+    <a href="https://www.bilibili.com/video/av753537612/" target="_blank" rel="noopener" class="champ-card"><div class="champ-num">④</div><div class="champ-name">春兰杯</div><div class="champ-detail">vs 朴永训 🇰🇷 · 2-0</div><div class="champ-result">2019</div></a>
+    <a href="https://www.bilibili.com/video/BV1yQ4y1S7pk/" target="_blank" rel="noopener" class="champ-card"><div class="champ-num">⑤</div><div class="champ-name">三星杯</div><div class="champ-detail">vs 申真谞 🇰🇷 · 2-1</div><div class="champ-result">2021</div></a>
+    <a href="https://www.bilibili.com/video/BV18JAUzyEsg/" target="_blank" rel="noopener" class="champ-card featured"><div class="champ-num">⑥</div><div class="champ-name">世界棋仙战 NEW</div><div class="champ-detail">vs 王星昊 🇨🇳 · 2-1 · 4亿韩元</div><div class="champ-result">2026</div></a>
+  </div>
+  <div class="stat-row">
+    <div class="stat-mini"><div class="n">4</div><div class="l">世界亚军</div></div>
+    <div class="stat-mini"><div class="n">~48</div><div class="l">总冠军头衔</div></div>
+    <div class="stat-mini"><div class="n">3</div><div class="l">亚运金牌</div></div>
+    <div class="stat-mini"><div class="n">2</div><div class="l">围甲冠军</div></div>
+  </div>
+</div>
+
+<!-- Fun Facts -->
+<div class="section-wrap reveal" id="facts">
+  <p class="section-label">Behind the Stones</p>
+  <h2 class="section-title">棋盘外的朴廷桓</h2>
+  <div class="fact-list">
+    <div class="fact-item"><span class="fact-num">1</span><span>🀄 在围甲打了3年，一句中文不会。教练通知吃饭要<strong>画碗和米饭</strong>，通知时间要<strong>画钟表</strong>。</span><a href="https://linyi.dzwww.com/tyyl/201409/t20140916_11026490.htm" target="_blank" rel="noopener" class="fact-source">[来源]</a></div>
+    <div class="fact-item"><span class="fact-num">2</span><span>🍜 自嘲方便面"煮了也不好吃"。一个能赢申真谞但征服不了泡面的男人。</span><a href="https://tieba.baidu.com/p/5518936483" target="_blank" rel="noopener" class="fact-source">[来源]</a></div>
+    <div class="fact-item"><span class="fact-num">3</span><span>💃 Red Velvet粉丝（Irene粉），理想型曾是裴秀智和全智贤。2020年"想遇到好女人"，2025年"只希望37岁前完成"。</span><a href="https://sports.sina.cn/others/qipai/2020-06-30/detail-iirczymk9720957.d.html" target="_blank" rel="noopener" class="fact-source">[来源]</a></div>
+    <div class="fact-item"><span class="fact-num">4</span><span>🤖 "我几乎把AI当成女朋友一样共度时光。睡前把平板放支架上做死活题到睡着。"</span><a href="https://news.qq.com/rain/a/20251230A0608700" target="_blank" rel="noopener" class="fact-source">[来源]</a></div>
+    <div class="fact-item"><span class="fact-num">5</span><span>💪 为长时制比赛健身，"肌肉增加了但肚子也长了不少，一年重了约8公斤"。</span><a href="https://m.163.com/dy/article/KI28TTM40529BOGK.html" target="_blank" rel="noopener" class="fact-source">[来源]</a></div>
+    <div class="fact-item"><span class="fact-num">6</span><span>🎭 极度内向自称"社交白痴"，但最有自信的表演是<strong>模仿卞相壹的声音</strong>。</span><a href="https://tieba.baidu.com/p/6791044164" target="_blank" rel="noopener" class="fact-source">[来源]</a></div>
+    <div class="fact-item"><span class="fact-num">7</span><span>🪪 弈城十几个马甲号，被识破就换——但永远被识破，对局量实在太大。ID：attractive（挨踢）、idontcal（我不卡）。</span><a href="https://linyi.dzwww.com/tyyl/201409/t20140916_11026490.htm" target="_blank" rel="noopener" class="fact-source">[来源]</a></div>
+    <div class="fact-item"><span class="fact-num">8</span><span>👶 6岁学棋只因大伯喜欢下彩棋，赢了棋大伯给零花钱买好吃的。</span><a href="https://baike.baidu.com/item/朴廷桓" target="_blank" rel="noopener" class="fact-source">[来源]</a></div>
+  </div>
+</div>
+
+<!-- Media Collection -->
+<div class="section-wrap reveal" id="media">
+  <p class="section-label">Media Collection</p>
+  <h2 class="section-title">个人物料合集</h2>
+  <p class="section-sub">对局录像 · 赛后采访 · 纪录片 · 粉丝配乐剪辑 · 深度报道 — 持续更新</p>
+
+  <div class="media-tabs">
+    <button class="media-tab active" onclick="switchTab('games')">对局 Games</button>
+    <button class="media-tab" onclick="switchTab('interview')">采访 Interview</button>
+    <button class="media-tab" onclick="switchTab('fanedit')">粉丝剪辑 Fan Edits</button>
+    <button class="media-tab" onclick="switchTab('doc')">纪录片 Doc</button>
+    <button class="media-tab" onclick="switchTab('articles')">图文 Article</button>
+  </div>
+
+  <!-- Games -->
+  <div class="media-panel active" id="panel-games">
+    <div class="media-grid">
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV18JAUzyEsg&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>2026棋仙战决赛决胜局 — 王星昊 vs 朴廷桓</h4><p class="meta">第一届世界棋仙战三番棋决胜局，执白230手中盘胜。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV18uf4BMEmB&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>2026棋仙战决赛首局 — 朴廷桓胜王星昊</h4><p class="meta">棋仙战三番棋第一局完整录像。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1qT4y1c7qg&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>盘上异梦传奇邀请战 — 朴廷桓 vs 申真谞</h4><p class="meta">2019年，主持人中途暂停采访棋手想法。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1V7411V7gP&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>第24届LG杯决赛 — 申真谞 vs 朴廷桓</h4><p class="meta">2020年，韩国两代王者巅峰对决。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1tZSBYHEPq&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>南洋杯 — 柯洁 vs 朴廷桓</h4><p class="meta">朴廷桓超时负名场面，两人都懵了。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1jaCTBoE8S&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>第30届三星杯 — 朴廷桓 vs 廖元赫</h4><p class="meta">2025三星杯精彩对局。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1PECTBiE9k&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>三星杯 — 廖元赫惊魂转换，朴廷桓诡异放水</h4><p class="meta">从天堂到地狱的三步问题手。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1rkC4BDEFK&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>2025三星杯8强 — 朴廷桓 vs 杨鼎新</h4><p class="meta">野狐围棋直播回放，中韩顶尖对决。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1eGRMBUEq8&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>2023 YK建机杯 — 朴廷桓 vs 李昌镐</h4><p class="meta">油管搬运，两代领军人物的跨时代对局。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1KY411P7D2&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>朴廷桓妄动杀心围歼大龙，王星昊反杀</h4><p class="meta">春兰杯相关精彩对局。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1ZEC3YrEp7&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>最新春兰杯：栽花得柳虎丸铁空施鬼手</h4><p class="meta">老朴绝境发神威的精彩逆转。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1dFKhzLEVK&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-game">对局</span><h4>春兰杯决赛杨楷文逆转朴廷桓夺冠</h4><p class="meta">2025年春兰杯决赛决胜局完整回顾。</p></div></div>
+    </div>
+  </div>
+
+  <!-- Interview -->
+  <div class="media-panel" id="panel-interview">
+    <div class="media-grid">
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV11AvsBcEE5&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-interview">采访</span><h4>棋仙战半决赛新闻发布会</h4><p class="meta">"被迫营业"笑起来超帅。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1XXPdeUEv4&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-interview">采访</span><h4>2025农心杯赛后采访 + 对局复盘</h4><p class="meta">含与芝野虎丸等对局回顾。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1Gz4y157pU&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-interview">采访</span><h4>世界最强棋士战赛后采访</h4><p class="meta">赛后第一时间谈对局感受。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1j2421N7rD&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-interview">采访</span><h4>朴廷桓 & 仲邑堇 — 对局前后采访</h4><p class="meta">两代棋手同框，年龄差20岁。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1vc41167L1&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-interview">采访</span><h4>2023三星杯赛后采访 & 复盘（BadukTV）</h4><p class="meta">朴廷桓VS檀啸部分复盘。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1JbQPB6Es1&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-interview">采访</span><h4>朴廷桓选手，可以看镜头吗？</h4><p class="meta">粉丝直拍棋仙战夺冠后的可爱瞬间。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV17r421g7Jt&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-interview">专访</span><h4>朴廷桓九段专访正片</h4><p class="meta">个人深度专访，展现亲和力。</p></div></div>
+    </div>
+  </div>
+
+  <!-- Fan Edits -->
+  <div class="media-panel" id="panel-fanedit">
+    <p style="font-size:.8rem;color:var(--gray-500);margin-bottom:var(--space-md);text-align:center;">配乐混剪 · 安利向 · 粉丝出品</p>
+    <div class="media-grid">
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1JbQPB6Es1&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-fan">配乐混剪</span><h4>朴廷桓选手，可以看镜头吗？</h4><p class="meta">GODS 棋仙夺冠贺 · 情人节特辑 · 生贺混剪 · 三星杯应援《征途》· 520柯朴大三角，一支视频看遍名场面。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1vD4y1p7yn&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-fan">生贺剪辑</span><h4>【朴廷桓九段生贺】莫于此</h4><p class="meta">粉丝生日应援配乐混剪，温情向。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1tM411879T&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-fan">CP向混剪</span><h4>【申真谞×朴廷桓】一样的月光</h4><p class="meta">"你留下最清楚的步伐，竟是指引我孤单的方向"——两代王者的宿命对决。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1VQAUzXE8M&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-fan">趣味混剪</span><h4>老朴你这是啥造型啊！登仙仪式么</h4><p class="meta">棋仙战夺冠颁奖趣味剪辑，粉丝笑评"登仙仪式"。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1Rv4y1A7iJ&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-fan">字幕搬运</span><h4>盘上异梦传奇邀请赛 — 赛前采访（中字）</h4><p class="meta">粉丝自製中字。朴廷桓vs申真谞赛前对话。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1ZEC3YrEp7&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-fan">配乐解说</span><h4>朴廷桓令人心惊的名局</h4><p class="meta">AI与人类思维完美融合，0.05%→99%鬼手大逆转，配乐沉浸感拉满。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1SZ421m7af&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-fan">赛事实况</span><h4>567杯韩国棋院锦标赛 — 朴廷桓&偰玹准</h4><p class="meta">决赛五番棋完整实况，BadukTV搬运。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1SX4y1C7gY&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-fan">安利向</span><h4>日本围棋解说「容姿端丽」的朴廷桓</h4><p class="meta">日媒解说视角的魅力配乐剪辑，安利必备。</p></div></div>
+      <div class="media-card"><div class="ext-link-card"><span class="icon">🔍</span><div><h4 style="font-size:.9rem;margin-bottom:2px;"><a href="https://search.bilibili.com/all?keyword=朴廷桓&order=pubdate" target="_blank" rel="noopener">B站搜索：朴廷桓（最新）</a></h4><p class="meta">更多对局解说、采访、混剪持续更新</p></div></div></div>
+    </div>
+  </div>
+
+  <!-- Documentary -->
+  <div class="media-panel" id="panel-doc">
+    <div class="media-grid">
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV11A411p7Q1&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-doc">纪录片</span><h4>朴申七番棋幕后纪录片「美丽的胜负，重新回到围棋」</h4><p class="meta">2020.12.29 BadukTV出品。南海七番棋幕后，棋盘外的生活状态，韩国第一人更替的历史性时刻。</p></div></div>
+      <div class="media-card"><div class="media-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1SZ421m7af&page=1&high_quality=1" allowfullscreen loading="lazy"></iframe></div><div class="media-info"><span class="media-badge badge-doc">赛事专题</span><h4>567杯韩国棋院锦标赛决赛五番棋</h4><p class="meta">朴廷桓 vs 偰玹准，BadukTV完整实况，每场3.5-5.5小时。</p></div></div>
+      <div class="media-card"><div class="ext-link-card"><span class="icon">▶</span><div><h4 style="font-size:.9rem;margin-bottom:2px;"><a href="https://www.youtube.com/watch?v=NoIYAWF8llU" target="_blank" rel="noopener">K围棋「盘上异梦」完整采访（韩语）</a></h4><p class="meta">YouTube · 主持：河好贞四段 & 金孝贞三段</p></div></div></div>
+    </div>
+  </div>
+
+  <!-- Articles -->
+  <div class="media-panel" id="panel-articles">
+    <div class="media-grid">
+      <div class="media-card"><div class="media-info" style="padding:var(--space-md);"><span class="media-badge badge-article">深度报道</span><h4 style="margin-top:var(--space-xs);"><a href="https://resource.ttplus.cn/publish/app/data/2026/01/05/576883/share1.html" target="_blank" rel="noopener">朴廷桓：而立年岁风暴如初</a></h4><p class="meta">体坛+ · 2026年1月 · 30岁后的职业生涯新篇章</p></div></div>
+      <div class="media-card"><div class="media-info" style="padding:var(--space-md);"><span class="media-badge badge-article">夺冠报道</span><h4 style="margin-top:var(--space-xs);"><a href="https://foxwq.com/news/mlist/id/16614.html" target="_blank" rel="noopener">首届棋仙战朴廷桓2比1问鼎，功成六冠王</a></h4><p class="meta">Fox围棋 · 2026年2月 · 横跨15年常青树的第六冠</p></div></div>
+      <div class="media-card"><div class="media-info" style="padding:var(--space-md);"><span class="media-badge badge-article">人物特写</span><h4 style="margin-top:var(--space-xs);"><a href="https://www.163.com/dy/article/KORVPF0K0549P3J5.html" target="_blank" rel="noopener">被低估的朴廷桓，一人独抗中国围棋90后天团</a></h4><p class="meta">网易 · 在中国围棋黄金一代面前的孤勇</p></div></div>
+      <div class="media-card"><div class="media-info" style="padding:var(--space-md);"><span class="media-badge badge-article">夺冠分析</span><h4 style="margin-top:var(--space-xs);"><a href="https://www.sohu.com/a/990787254_122390055" target="_blank" rel="noopener">名副其实棋仙！朴廷桓斩获第6冠，33岁追平刘昌赫</a></h4><p class="meta">搜狐 · 2026年2月 · 迟来的荣耀回归</p></div></div>
+      <div class="media-card"><div class="media-info" style="padding:var(--space-md);"><span class="media-badge badge-article">专访</span><h4 style="margin-top:var(--space-xs);"><a href="https://sports.sina.cn/others/qipai/2019-11-27/detail-iihnzahi3621190.d.html" target="_blank" rel="noopener">朴廷桓：十个世冠是我毕生梦想</a></h4><p class="meta">新浪体育 · 2019年 · 每时每刻都不忘世界冠军的目标</p></div></div>
+      <div class="media-card"><div class="media-info" style="padding:var(--space-md);"><span class="media-badge badge-article">赛后采访</span><h4 style="margin-top:var(--space-xs);"><a href="https://news.qq.com/rain/a/20251230A0608700" target="_blank" rel="noopener">朴廷桓：把AI当成女朋友</a></h4><p class="meta">腾讯新闻 · 2025年12月 · "AI是我女朋友"出处</p></div></div>
+      <div class="media-card"><div class="media-info" style="padding:var(--space-md);"><span class="media-badge badge-article">历史回顾</span><h4 style="margin-top:var(--space-xs);"><a href="http://sports.sina.com.cn/go/2011-08-15/03135703109.shtml" target="_blank" rel="noopener">从入段到世界冠军仅5年，被赞"李世石二世"</a></h4><p class="meta">新浪体育 · 2011年 · 18岁首冠时的媒体报道</p></div></div>
+      <div class="media-card"><div class="media-info" style="padding:var(--space-md);"><span class="media-badge badge-article">深度分析</span><h4 style="margin-top:var(--space-xs);"><a href="https://zhuanlan.zhihu.com/p/2014011220810810477" target="_blank" rel="noopener">朴廷桓，韩国围棋最顽强的"最弱领军人物"</a></h4><p class="meta">知乎 · 还能夺得第七冠吗？</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer-wrap reveal">
+  <p style="font-size:1.05rem;font-weight:700;color:var(--blue-300);">박정환 · 朴廷桓 · PARK JUNGHWAN</p>
+  <p style="margin-top:var(--space-xs);">职业九段 · 六冠棋仙 · 1993 —</p>
+  <p style="margin-top:var(--space-sm);font-size:.72rem;opacity:.5;">
+    Developed by SeoHam · Powered by Claude Code
+  </p>
+  <p style="margin-top:var(--space-xs);font-size:.72rem;opacity:.5;">
+    Fanpage · 数据来源：
+    <a href="https://zh.wikipedia.org/zh-hant/朴廷桓" target="_blank" rel="noopener">Wiki</a> ·
+    <a href="https://baike.baidu.com/item/朴廷桓" target="_blank" rel="noopener">百度百科</a> ·
+    <a href="https://foxwq.com/news/mlist/id/16614.html" target="_blank" rel="noopener">Fox围棋</a> ·
+    Bilibili · YouTube
+  </p>
+  <a href="#" class="back-top">↑ TOP</a>
+</div>
+
+</main>
+</div>
+
+<script>
+// Tab switching
+function switchTab(type) {
+  document.querySelectorAll('.media-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.media-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + type).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Perspective parallax on fixed background
+const bg = document.getElementById('bgLayer');
+if (bg && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  document.addEventListener('mousemove', e => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 5;
+    const y = (e.clientY / window.innerHeight - 0.5) * 3;
+    bg.style.transform = `perspective(1200px) rotateY(${-3 + x}deg) rotateX(${y * 0.25}deg) scale(1.12)`;
+  });
+}
+
+// TOC active section tracking
+const tocLinks = document.querySelectorAll('.toc a');
+const sections = [];
+tocLinks.forEach(a => {
+  const id = a.getAttribute('href').slice(1);
+  const el = document.getElementById(id);
+  if (el) sections.push({ el, a });
+});
+
+function updateTOC() {
+  let current = sections[0];
+  sections.forEach(s => {
+    if (s.el.getBoundingClientRect().top < window.innerHeight * 0.4) current = s;
+  });
+  tocLinks.forEach(a => a.classList.remove('active'));
+  if (current) current.a.classList.add('active');
+}
+window.addEventListener('scroll', updateTOC);
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('revealed'); });
+}, { threshold: 0.05 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
